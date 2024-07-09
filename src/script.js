@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import GUI from 'lil-gui';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader.js';
 import {Water} from './Water.js';
@@ -23,7 +22,6 @@ gltfLoader.load(
  * Base
  */
 // Debug
-const gui = new GUI();
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
@@ -107,7 +105,6 @@ water = new Water(
 );
 
 water.rotation.x = -Math.PI / 2;
-gui.add(water.position, "y").max(5).min(-5).step(0.001).name("y")
 water.position.x = 1
 water.position.z = 3
 water.position.y = 0.32
