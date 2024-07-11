@@ -83,10 +83,12 @@ let water = null;
 /**
  * Water Shader
  */
-const waterGeometry = new THREE.PlaneGeometry(2, 3);
+const shape = new THREE.Shape();
+shape.absellipse(0, 0, 1, 1.5, 0, Math.PI * 2);
+const geometry = new THREE.ShapeGeometry(shape);
 
 water = new Water(
-    waterGeometry,
+    geometry,
     {
       textureWidth: 512,
       textureHeight: 512,
